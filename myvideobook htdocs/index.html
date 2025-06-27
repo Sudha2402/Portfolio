@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GyanSangee Book</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="menu-btn" id="menuBtn">
+      <div class="menu-bar"></div>
+      <div class="menu-bar"></div>
+      <div class="menu-bar"></div>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h3>Categories</h3>
+      </div>
+      <div class="category-list" id="categoryList">
+        <!-- Categories will be loaded dynamically -->
+      </div>
+      <div class="user-section">
+        <button id="loginBtn">Login/Register</button>
+        <button id="createBookBtn">Create Your Book</button>
+        <button id="editBookBtn">Edit this Book</button>
+      </div>
+    </div>
+
+    <section class="sidebarLoginAddBook">
+      <div class="login-modal" id="loginModal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Login / Register</h2>
+          <form id="authForm" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Your Name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter password"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="profilePhoto">Profile Photo</label>
+              <input type="file" id="profilePhoto" accept="image/*" />
+            </div>
+            <div class="form-group">
+              <button type="submit" id="submitAuth">Login</button>
+              <br />
+              <br />
+              <button type="button" id="switchToRegister">
+                Create Account
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="create-book-modal" id="createBookModal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Create Your Book</h2>
+          <div class="form-group">
+            <label for="bookTitle">Book Title</label>
+            <input type="text" id="bookTitle" placeholder="Enter book title" />
+          </div>
+          <div class="form-group">
+            <label for="bookCategory">Category</label>
+            <select id="bookCategory">
+              <!-- Categories will be loaded dynamically -->
+            </select>
+            <input
+              type="text"
+              id="newCategory"
+              placeholder="Or enter new category"
+              style="display: none"
+            />
+            <button type="button" id="toggleCategory">Add New Category</button>
+            <label for="user_book_Logo">Book Logo</label>
+            <input type="file" id="user_book_Logo" accept="image/*" />
+            <label for="bookAuthor">Author</label>
+            <input
+              type="text"
+              id="bookAuthor"
+              placeholder="Author Name"
+              required
+            />
+            <label for="BookCover">Book Cover</label>
+            <!-- <input
+              type="color"
+              id="BookCover"
+              placeholder="Book Cover Color Code (eg. #0a0a2a)" 
+            /> -->
+            <input type="color" id="BookCover" value="#0a0a2a" />
+
+            <label for="BookCoverTitle">Book Title Color</label>
+            <input
+              id="BookCoverTitle"
+              type="color"
+              placeholder="Book Title Color Code (eg. #0a0a2a)"
+            />
+          </div>
+          <div class="form-group">
+            <label for="videoUrls"
+              >Enter YouTube Embed URLs (one per line)</label
+            >
+            <textarea
+              id="videoUrls"
+              rows="10"
+              placeholder="Paste YouTube embed URLs here, one per line (e.g., https://www.youtube.com/embed/VIDEO_ID)"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="videoPageText"
+              >Enter each video Text (one per line)</label
+            >
+            <textarea
+  id="videoPageText"
+  rows="10"
+  placeholder="Enter each video text here. Separate different videos with 2 blank lines.&#10;&#10;Example:&#10;Video 1: This video is about my class.&#10;&#10;I love to go to school.&#10;&#10;&#10;Video 2: This video is about my fun activity.&#10;&#10;I enjoy playing with my parents.&#10;&#10;(Press Enter for new lines, add extra blank lines between videos)"
+  class="form-control"
+></textarea>
+<!-- &#10; newline in html-->
+          </div>
+          <div class="form-group">
+            <button id="submitBook">Create Book</button>
+          </div>
+          <div id="bookLinkContainer" style="display: none">
+            <p>Share your book:</p>
+            <input type="text" id="bookLink" readonly />
+            <button id="copyLink">Copy Link</button>
+            <button id="openBookNow">Open Book Now</button>
+          </div>
+        </div>
+        <div class="preview-section">
+          <h3>Live Preview</h3>
+          <div class="book-preview">
+            <div id="previewCover" class="preview-cover">
+              <img
+                id="previewLogo"
+                src="attachments/default_category.png"
+                alt="Book Logo"
+              />
+              <h2 id="previewTitle">Book Title</h2>
+              <p id="previewAuthor">- By Author</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bookContainer">
+      <div class="stars" id="stars"></div>
+      <div class="book-container">
+        <div class="book" id="book">
+          <div class="cover book-cover" id="cover">
+            <div class="title" id="bookTitleElement">Gyan Sangee</div>
+            <div class="logo">
+              <img
+                id="bookLogo"
+                src="attachments/gyan_sangee.jpg"
+                alt="Book Logo"
+              />
+            </div>
+            <div class="author" id="bookAuthorElement">- By Video Book</div>
+          </div>
+          <div class="pages" id="pages">
+            <!-- Pages will be created dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="openBtn" class="btn">Open Book</button>
+        <div id="navControls" class="hidden">
+          <div class="flexDisplay">
+            <button id="prevBtn" class="btn btn-nav">&lt;</button>
+            <div id="pageIndicator" class="page-indicator">Page 1/1</div>
+            <button id="nextBtn" class="btn btn-nav">&gt;</button>
+          </div>
+          <div class="flexDisplay">
+            <input type="number" id="goToPageTyped" placeholder="Go to page" />
+            <div id="goToPage">Go</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="candleContainer">
+        <div class="candle">
+          <div class="candle-body"></div>
+          <div class="candle-top"></div>
+          <div class="candle-wick"></div>
+          <div class="glow"></div>
+          <div class="flame"></div>
+          <div class="spark"></div>
+          <div class="spark"></div>
+          <div class="spark"></div>
+          <div class="spark"></div>
+        </div>
+      </div>
+    </div>
+    <div class="resultContainer">
+      <p class="result">Result Message</p>
+    </div>
+    <!-- <script src="script.js"></script> -->
+    <!-- <script src="scriptModified.js"></script> -->
+    <!-- works all good but only logo and author and video upload creates problem. -->
+    <script src="gyanSangeeScript.js"></script>
+  </body>
+</html>
