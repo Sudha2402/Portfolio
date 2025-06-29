@@ -1,0 +1,12 @@
+body{
+	/* background: #ddb5b5; */
+	background: #e1b9c4;
+	background-image: linear-gradient(180deg, #9995de 0%, #2626c7 35%, #4ddb4d 100%);
+color: white;
+display: flex;
+/* this will create problem for history button hence commented */
+justify-content: center;
+align-items: center;
+
+
+}

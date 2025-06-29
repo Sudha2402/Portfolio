@@ -1,0 +1,11 @@
+body{
+    background-image: linear-gradient(0deg, #150ad9 0%, #090979 35%, #6fc4d5 100%);
+
+    color: white;
+    /* background-image: url(consumers\ right.png); */
+
+}
+
+img{
+    width: 100%;
+}

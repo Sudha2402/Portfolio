@@ -1,0 +1,126 @@
+
+        /* canvas { */
+@media screen and (max-width: 450px) {
+
+         .controllers {
+            flex-wrap: wrap;
+           gap: 10vh;
+         }
+}
+
+        body {
+
+            /* background-image: linear-gradient(180deg, #9995de 0%, #2626c7 35%, #4ddb4d 100%); */
+            /* background-color: #9995de ; */
+
+            /* background-image: linear-gradient(180deg, #4ddb4d 0%, #2626c7 35%, #9995de 100%); */
+
+            background-image: linear-gradient(to bottom, #0c1db8 0%, #7046aa 15%, #ff7882 35%, #e790c0 45%, #e5d7f7 71%, #fcc5e4 80%, #6272e9 100%);
+
+            /* background-color: rgb(196, 195, 195); */
+
+            /* background-image: linear-gradient(180deg, #9995de 0%, #2626c7 35%, #9995de 70%, #2626c7 100%); */
+            
+            display: block;
+            align-self: center;
+            overflow-x: hidden;
+            min-height: 100vh;
+            /* width: max-content; */
+            width: 100vw;
+            overflow-x: auto;
+           max-height: max-content;
+
+        }
+
+        button{
+            background-color: #0c830c;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0,0, 0.2);
+            transition: all 0.3s ease-in-out;
+
+        }
+
+        #canvasGame {
+
+            /* display: block;
+            align-self: center;
+            justify-self: center; */
+
+            border: 1px solid #d3d3d3;
+            background-image: url("files acc/nature2.png");
+
+            /* background-image: url("background nature2.png"); */
+            background-repeat: no-repeat;
+            /* background-size: cover; */
+            background-size: cover;
+            /* max-width: 679px; */
+            /* overflow: hidden; */
+            /* min-height: 393; */
+            /* max-height: 80vh; */
+
+        }
+
+        .price {
+            /* color: green; */
+            border: solid black 1px;
+            max-width: fit-content;
+            border-radius: 50px;
+            padding: 5vh;
+            display: block;
+            align-self: center;
+            justify-self: center;
+            margin-top: 5vh;
+            font-family: 'Arial', sans-serif;
+            /* background-color: rgb(165, 233, 255); */
+            /* font-size: larger; */
+            /* background-color: rgb(194, 245, 177); */
+            /* background-color: rgb(230, 247, 225); */
+            /* background-image:linear-gradient(90deg, rgb(192, 127, 236) 0%, rgb(199, 236, 243) 50%, rgb(29, 219, 58) 100%); */
+            /* background-image:linear-gradient(90deg, rgb(192, 127, 236) 0%, rgb(199, 236, 243) 50%, rgb(29, 219, 58) 100%); */
+
+
+        }
+
+        .scorePoint {
+            /* color: aqua; */
+            color: blue;
+            font-weight: bolder;
+            width: 80px;
+            display: inline-block;
+            text-align: end;
+            padding-right: 10px;
+
+        }
+
+
+        .cashPrice {
+            color: red;
+            font-weight: bolder;
+            display: inline-block;
+            padding-left: 10px;
+
+
+        }
+
+
+        .controllers {
+            display: flex;
+            /* justify-self: center; */
+            align-items: center;
+            /* we want space between flex items*/
+            justify-content: space-between;
+            max-width: 700px;
+
+           
+           
+
+
+
+
+
+        }

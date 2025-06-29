@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>buy options</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- this is for bigger fonts -->
+
+
+    <!-- the bootstrap file to apply all layout just by putting the class name -->
+
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+    <!-- this is for + , - etc  -->
+
+
+    <link href="buymethodsstyle.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/allPageCommonStyle.css">
+
+    <link rel="stylesheet" href="/style2.css">
+
+    <!-- <link href="cartStyle.css" rel="stylesheet"> -->
+
+</head>
+
+
+<body>
+
+
+    <section>
+
+
+        <div class="container">
+
+            <h2 class="px-5 p-2">My product</h2>
+            <!-- this class is for links stylesheet to be used and it bring  distance in left -->
+            <!-- px shows padding along x from left  -->
+            <!-- p2 shows padding along y from top  -->
+
+            <div class="cart">
+                <div>
+
+
+                    <div class="productsList">
+
+
+                        <div class="cart-item itemcount">
+                            <div class="row">
+                                <!-- thie row class has general meaning defined by created , not predefined class -->
+                                <div class="center-item">
+                                    <!-- used to keen image and title in flex hrozontally -->
+                                    <!-- center-item shows inline flex hozizontal -->
+                                    <img class="buyCart" src="files acc/magasalebanner.png" alt="">
+
+                                    <span class="productCode" style="display: none;"></span>
+
+                                    <h5 class="productName">Hair-Care-Thermal-Head-Spa-Cap</h5>
+
+
+                                </div>
+
+
+                                <!-- below + , - and price in horizontal flex  -->
+                                <div class="center-item flexwrap">
+                                    <!-- center-item shows inline flex hozizontal  and take space as much required by it's component-->
+
+                                    <!-- for creating number +,- -->
+                                    <div class="input-group">
+                                        <!-- input-group keep the number slider horizontal , you can also use center-item here in place of input-group -->
+                                        <!-- <button class="quantity-minus" class="btn"><i class="fas fa-minus"></i></button> -->
+                                        <button class="quantity-minus btn"><i class="fas fa-minus"></i></button>
+                                        <!-- quantity-minus is used to apply js on it -->
+
+
+                                        <input type="number" min="1" class="quantity-number form-control text-center"
+                                            value="1">
+                                        <!-- form-control used to apply css on it and id is used to apply javascript-->
+                                        <button class="quantity-plus btn"><i class="fas fa-plus"></i></button>
+
+                                    </div>
+
+
+                                    <!-- <h5>&#8377; <span class="quantity-total">600</span> <span
+                                            class="productSize"></span></h5> -->
+
+                                            <h6>&#8377; <span class="quantity-total">600</span><br>Size :  <span
+                                                class="productSize"></span>
+                                                <span><br>per:&#8377;<span class="priceOfEach"></span>
+                                            </span>
+                                            </h6>
+
+                                    <div>
+                                        <img src="files acc/magasalebanner.png"
+                                            alt="" class="small-item">
+
+                                    </div>
+
+
+                                    <div>
+                                        <button class="btn btn-danger remove-item" type="button">Remove</button>
+                                        <!-- this image is short image of product only -->
+                                    </div>
+
+
+
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- this is for billing -->
+                    <div class="cart-item">
+                        <div class="row">
+                            <!-- row is used for horizontal flex and can be replaced with center-item, both works same -->
+
+                            <div class="col-6">
+                                <!-- col 6 decides the colspan of this -->
+                                <h5>Subtotal: </h5>
+                                <h5>Delivery:</h5>
+                                <h5>Total:</h5>
+                            </div>
+
+                            <div class="col-6 status">
+                                <!-- status for css to align text right -->
+                                <h5>&#8377;<span class="sub-total">600</span></h5>
+                                <h5>&#8377;<span class="tax-amount">0</span></h5>
+                                <h5>&#8377;<span class="total-price">600</span></h5>
+                            </div>
+
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+
+
+                    <div class="pb-5 pt-2 ">
+
+                        <button type="button" class="btn btn-success undo" onclick="Undo()"
+                            style="float: inline-start;padding: 10px 30px;font-size: 19px;color: white;display: none;">Undo
+                            the removed items
+                        </button>
+
+                        <button type="button" class="btn   place-order">Place Order</button>
+
+
+                    </div>
+
+                    <br>
+                    <div class="payoutmethods">
+
+
+
+                        <div class="cart-item">
+                            <!-- Mode of payment options -->
+                            <div class="row">
+                                <div>
+                                    <!-- <h5 ">Mode of Payment:</h5> -->
+
+
+                                    <!-- <select  id="payment-mode"> -->
+                                    <!-- <select id="payment-mode" > -->
+                                    <!-- <option value="cash"> Cash on delivery </option>
+                           
+                            <option value="card">Card</option>
+                            <option value="upi">UPI</option>
+
+                        </select> -->
+
+                                    <!-- radio button
+                         -->
+
+
+                                    <div id="paymentmode">
+
+                                        <h5 style="color: blue;">Mode of Payment:</h5>
+
+                                        <!-- <div>
+                                            <input type="radio" id="cash" name="payment-mode" value="cash">
+                                            <label for="cash"> Cash on delivery </label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="card" name="payment-mode" value="card">
+                                            <label for="card"> Card </label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="upi" name="payment-mode" value="up
+i">
+                                            <label for="upi"> UPI </label>
+                                        </div> -->
+
+
+
+                                        <div>
+                                            <input type="radio" id="cash" name="payment-mode" value="cash">
+                                            <label for="cash"> Cash on delivery </label>
+                                            <br> <p style="color: rgb(2, 169, 47);">(Best Mode of payment, pay after receiving your product)</p> 
+                                        </div>
+                                        <div>
+                                            <!-- we don't want card right now -->
+                                            <input type="radio" id="card" name="payment-mode" value="card">
+                                            <label for="card"> Card  </label>
+                                            <br> <p style="color: rgb(207, 11, 11);">(takes extra charge hence prefer Cash on delivery)</p> 
+                                        </div>
+                                        <div>
+
+                                            <!-- we don't want UPI right now -->
+                                            <input type="radio" id="upi" name="payment-mode" value="upi">
+                                            <label for="upi"> UPI </label>
+                                            <br> <p style="color: rgb(207, 11, 11);">(takes extra charge hence prefer Cash on delivery)</p> 
+                                        </div>
+
+
+
+                                    </div>
+
+
+
+
+                                </div>
+                            </div>
+                            <!-- asking for delivery address -->
+
+
+                            <div class="pb-5 pt-2 ">
+                                <!-- it is used for alighning the button in padding bottom , pt means padding top -->
+                                <!-- <a href="payment.html"> <button type="button" class="btn btn-success check-out">Check Out</button></a> only can be used in case of Card -->
+
+                                <button type="button" class="btn btn-success check-out">proceed</button>
+
+                                <!-- btn-success is used from bootstrap for button effect on hover and color white-->
+                                <!-- check-out is used for applying css and float right -->
+                            </div>
+
+                        </div>
+
+
+                        <div class="cart-item" id="thisOrderedDetails" style="display: none;">
+                            <!-- <form action="order.php" method="post"> -->
+                            <form name="orderDetails">
+
+                                <div class="form-group">
+
+                                    <label for="firstname" class="col-3">firstname</label>
+                                    <input type="text" class="col-8" name="firstname" id="firstname" required />
+
+                                    <label for="lastname" class="col-3">lastname</label>
+                                    <input type="text" class="col-8" name="lastname" id="lastname" required />
+                                    <!--     
+                                    <label for="username" class="col-3">username</label>
+                                    <input class="col-8" type="text" name="username" id="username" required /> -->
+
+                                    <label for="phone" class="col-3">phone no.</label>
+                                    <input class="col-8" type="text" name="phone" id="phone" required maxlength="12"
+                                        onblur="checkMobileNo()" />
+                                    <!-- maxlength="12" after this length , it will be stopped taking inputs -->
+
+                                    <!-- <label for="password" class="col-3">password</label>
+                                    <input type="password" class="col-8" name="password" id="password" required /> -->
+
+
+
+                                    <label for="email" class="col-3">email</label>
+                                    <input type="email" class="col-8" name="email" id="email" required />
+
+
+                                    <label for="address" class="col-3">address</label>
+                                    <input type="text" class="col-8" name="address" id="address" required />
+
+
+                                    <p style="color: aqua;cursor: pointer;" id="trackLocation"
+                                        onclick="trackLocation()">Track my
+                                        current location
+
+                                    </p>
+                                    <p>
+                                    <p id="demogeolocation" style="display: none;">loading...</p>
+                                    <p id="geolocationLatitude" style="display: none;"></p>
+                                    <p id="geolocationLongitude" style="display: none;"></p>
+
+                                    </p>
+
+
+
+
+
+                                    <label for="city" class="col-3">city</label>
+                                    <input type="text" name="city" class="col-8" id="city" required />
+
+                                    <label for="state" class="col-3">state</label>
+                                    <input type="text" name="state" class="col-8" id="state" required />
+
+                                    <label for="zip" class="col-3">zip/pin code</label>
+                                    <input type="text" class="col-8" name="zip" id="zip" required />
+
+                                    <label for="country" class="col-3">country</label>
+                                    <input type="text" class="col-8" name="country" id="country" required />
+
+                                    <br />
+                                    <br />
+
+                                </div>
+                                <br />
+                                <br />
+
+                                <input type="button" value="Update Account Details" style="float: left;"
+                                    id="UpdateAccount" class="" />
+
+                                <!-- <input type="submit" value="Checkout" style="float: right;" id="checkOutFinal" class="btn btn-success" /> -->
+
+
+                                <!-- <input type="button" value="Checkout" style="float: right;" id="checkOutFinal" class="btn btn-success" /> -->
+                                <input type="button" value="Save and Continue" style="float: right;" id="checkOutFinal"
+                                    class="btn btn-success" />
+                                <br />
+                                <br />
+
+
+                            </form>
+                            <input type="button" value="Pay Now"
+                                style="justify-self: center;align-self: center;display:none" id="payNow"
+                                class="btn payNow" />
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- this div for product item inner border -->
+        </div>
+        <!-- this div for black outer border -->
+
+    </section>
+    <!-- for whole body with -->
+
+
+
+    <div ciass="lowerpopedUp" id="buyMethodOutput" style="display: none;
+    position: fixed;
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 30vw;
+    max-width: 80vw;
+    padding: 1vh;
+    min-height: 5vh;
+    background-color: black;
+    color: white;
+    z-index: 10;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    overflow-wrap: break-word;">
+        Output
+    </div>
+
+
+
+</body>
+
+
+
+
+<script src="buymethod3.js"></script>
+
+
+<!-- <script src="allPageCommonScript.js"></script> -->
+
+<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+
+<!-- <script src="script.js"></script> -->
+
+<script src="pay.js"></script>
+<!-- //we will integrate razorpay here -->
+
+
+<script src="pagesnavigation.js"></script>
+
+</html>

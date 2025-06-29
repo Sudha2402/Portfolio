@@ -1,0 +1,153 @@
+section{
+	/* background: #ddb5b5; */
+	/* background: #e1b9c4;
+	background-image: linear-gradient(180deg, #9995de 0%, #2626c7 35%, #4ddb4d 100%);
+color: white;		 */
+display: flex;
+/* this will create problem for history button hence commented */
+justify-content: center;
+align-items: center;
+max-width: 100vw;
+justify-self: center;
+/* justify-self: center; is main for converting into center alignment */
+
+}
+
+.cart{
+	margin: 3vh 0;
+	background-color: #555b4f;;
+	padding: 4vw 3vw;
+	color: black;
+	max-width: 600px;
+
+	
+}
+
+.total-price{
+	padding-bottom: 15px;
+}
+
+.cart-item{
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 15px 20px;
+	margin-bottom: 20px;
+}
+.center-item{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+
+
+}
+
+.flexwrap{
+	display: flex;
+	 flex-wrap: wrap;
+}
+
+.cart-item img{
+	width: 115px;
+	cursor: pointer;
+}
+.cart-item h5{
+    padding: 0 45px;
+}
+.cart-item .small-item{
+	/* width: 25px!important; */
+	width: 25px;
+	/* margin-right: 5vw; */
+}
+.remove-item{
+	/* background-color: #f44336; */
+
+}
+
+
+.btn-default{
+	background-color: #fff;
+}
+.cart-item .form-control{
+	background-color: #F6F5FA;
+	border: none;
+    width: 65px;
+    /* border-radius: 10px!important; */
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+
+.quatcost{
+	display: flex;
+	flex-wrap: wrap; 
+	/* helpful */
+}
+
+
+
+.input-group{
+	width: unset;
+	flex-wrap: nowrap;
+}
+.status{
+	text-align: right;
+}
+
+#paymentmode{
+	display: grid;
+	background-color: white;
+	padding:5% 10% 5% 10%;
+	border-radius: 10px;
+	/* justify-items: left; */
+	/* justify-content: left; */
+
+
+	/* min-width: 100%; */
+	/* width: 100%; */
+}
+
+#paymentmode h5{
+	padding: 0px;
+}
+
+.place-order {
+	background-color: #c529d3;
+	float: right;
+    padding: 10px 30px;
+	font-size: 19px;
+	color: white;
+}
+
+.payNow {
+	background-color: #c529d3;
+	padding: 10px 30px;
+	font-size: 19px;
+	color: white;
+}
+
+
+.place-order:hover , .payNow:hover {
+	background-color: #7b206d;
+	color: white;
+	
+}
+
+
+.payoutmethods{
+	/* visibility: hidden; */
+	/* it reserves its space */
+	display: none; 
+	/* it removes its space */
+	
+}
+
+.check-out{
+    float: right;
+    padding: 10px 30px;
+	font-size: 19px;
+	background-color: #22c324;
+	border: none;
+}
+

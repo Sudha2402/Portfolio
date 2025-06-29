@@ -1,0 +1,76 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Tangerine');   */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');  */
+
+body {
+
+    background-image: url('files acc/help.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: black;
+    text-decoration-color: aqua;
+   
+    
+}
+
+.scrollsection {
+   width: 100vw;
+   overflow-x: hidden;
+   /* position: absolute; */
+}
+
+#requestAnimationFrameId {
+
+}
+
+
+a p{
+    font-size: 20px;
+    background-color: gray;
+    color: white;
+    text-decoration: none;
+
+}
+
+p.simpleHeighlight{
+    /* text-shadow: 0 0 3px white, 0 0 5px #9e9ecf; */
+    /* -webkit-text-stroke-width: 1px;  */
+    /* -webkit-text-stroke-color: black; */
+    /* color: white; */
+    /* color: aqua; */
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -1px 0 white, 0 1px black, 1px 0 black, 0 -1px black;
+    color: blue;
+    font-size: larger;
+    font-style: italic;
+    font-weight: bolder;
+    /* -webkit-text-stroke-width: 1px;  */
+    /* -webkit-text-stroke-color: black; */
+}
+
+textarea{
+    width: 100%;
+    height: 40;
+    font-weight: bolder;
+    /* background-color: rgb(240, 251, 255); */
+    font-size: larger;
+    padding: 15px;
+    font-family:'Montserrat', sans-serif;
+   
+    text-overflow: scroll;
+    
+}
+
+  .content {
+    /* position: fixed; */
+   
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    margin-left: 20px;
+    margin-right: 20px;
+background-color: rgb(4, 59, 186);
+
+  }
+

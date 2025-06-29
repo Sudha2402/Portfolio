@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="ecommerce site">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Sudha">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="htmlgame.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>Phenoxi Shanaya Bazaar</title>
+
+</head>
+
+
+
+<body onload="startGame()" id="gamePage">
+
+    <div id="mainPageHrefOrSrc" style="display: none;">
+        /
+    </div>
+
+
+    <div>
+
+
+        <div class="controllers">
+
+
+
+            <button onclick="location.reload()" id="restart">Restart</button>
+
+
+            <div style="text-align:center;width:50vw;">
+
+                <button onmousedown="moveup()" onmouseup="clearmove()" ontouchstart="moveup()" ontouchend="clearmove()">UP</button><br><br>
+                <button onmousedown="moveleft()" onmouseup="clearmove()" ontouchstart="moveleft()" ontouchend="clearmove()">LEFT</button>
+                <button onmousedown="moveright()" onmouseup="clearmove()"
+                    ontouchstart="moveright()" ontouchend="clearmove()">RIGHT</button><br><br>
+                <button onmousedown="movedown()" onmouseup="clearmove()" ontouchstart="movedown()" ontouchend="clearmove()">DOWN</button>
+
+            </div>
+
+
+
+
+
+
+
+
+            <div>
+                <p id="Gamelogin" style="display: none;"><a href="http://localhost:3000/animatedLogin.html"><button
+                            style="width: fit-content;padding: 3px;color: white;background-color: #2626c7;">Login To
+                            save
+                            your record</button></a></p>
+                How long can you stay alive?
+                <br>SCORE:
+                <span id="score" style="text-align:center;width:20vw;"></span>
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+ 
+
+    <span class="price">
+
+
+        You need to score <span class="scorePoint">10000</span> for product of <span class="cashPrice">Rs 20</span>
+        <br>
+        You need to score <span class="scorePoint">15000</span> for product of <span class="cashPrice">Rs 50</span>
+        <br>
+        You need to score <span class="scorePoint">20000</span> for product of <span class="cashPrice">Rs 80</span>
+        <br>
+        You need to score <span class="scorePoint">30000</span> for product of <span class="cashPrice">Rs 100</span>
+        <br>
+        You need to score <span class="scorePoint">100000</span> for product of <span class="cashPrice">Rs 500</span>
+        <br>
+        You need to score <span class="scorePoint">500000</span> for product of <span class="cashPrice">Rs 1000</span>
+
+
+    </span>
+
+
+    <br>
+    <br>
+    <iframe id="mainHeader" src="/index.php" style="display: none;"></iframe>
+    <header id="mainHeaderNode" style="position: relative;bottom: 0;"></header>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+
+
+
+</body>
+
+
+<!-- <script src="script.js"></script> -->
+<script src="htmlgame.js"></script>
+
+
+
+</html>

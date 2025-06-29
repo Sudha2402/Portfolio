@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Product</title>
+    <style>
+ /* Base Styles */
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4cc9f0;
+    --success-color: #4bb543;
+    --danger-color: #f94144;
+    --warning-color: #f8961e;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --gray-color: #6c757d;
+    --border-radius: 12px;
+    --box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7ff;
+    color: var(--dark-color);
+}
+
+/* Container Styles */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header Styles */
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* Order Info Styles */
+.order-info {
+    background: linear-gradient(135deg, #f5f7ff 0%, #e8ecff 100%);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    border-left: 4px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.order-info:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.1);
+}
+
+.order-info p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.order-info strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Form Group Styles */
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--dark-color);
+    font-size: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e4f5;
+    border-radius: var(--border-radius);
+    font-size: 15px;
+    transition: var(--transition);
+    background-color: #f8f9ff;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+
+/* File Upload Styles */
+.photo-upload {
+    border: 2px dashed #d1d8ff;
+    padding: 30px;
+    text-align: center;
+    border-radius: var(--border-radius);
+    margin: 25px 0;
+    background-color: #f8f9ff;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-upload:hover {
+    border-color: var(--primary-color);
+    background-color: #e8ecff;
+}
+
+.photo-upload input {
+    display: none;
+}
+
+.upload-label {
+    display: inline-block;
+    padding: 12px 25px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(67, 97, 238, 0.1);
+}
+
+.upload-label:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(67, 97, 238, 0.15);
+}
+
+#file-name {
+    margin-top: 15px;
+    font-size: 14px;
+    color: var(--gray-color);
+}
+
+#preview-container {
+    margin-top: 20px;
+    display: none;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+#image-preview {
+    max-width: 100%;
+    max-height: 250px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 1px solid #e0e4f5;
+}
+
+/* Button Styles */
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(67, 97, 238, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-submit:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(67, 97, 238, 0.15);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+        margin: 20px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    .order-info {
+        padding: 15px;
+    }
+}
+
+/* Success Animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-15px);}
+    60% {transform: translateY(-7px);}
+}
+
+.success-bounce {
+    animation: bounce 1s;
+}
+    </style>
+</head>
+<body>
+     <div class="container">
+        <h1>Return Product</h1>
+        
+        <div class="order-info">
+            <p><strong>Order Number:</strong> <span id="displayOrderNumber"></span></p>
+            <p><strong>Product Code:</strong> <span id="displayProductCode"></span></p>
+        </div>
+
+        <form id="returnForm" enctype="multipart/form-data">
+            <input type="hidden" id="orderNumber" name="orderNumber">
+            <input type="hidden" id="productCode" name="productCode">
+            
+          <div class="form-group">
+    <label>Select Return Option</label>
+    <div class="radio-group">
+        <label class="radio-option">
+            <input type="radio" name="returnOption" value="return" required>
+            <span class="checkmark"></span>
+            Return Product
+        </label>
+        <label class="radio-option">
+            <input type="radio" name="returnOption" value="replace">
+            <span class="checkmark"></span>
+            Replace Product
+        </label>
+        <label class="radio-option">
+            <input type="radio" name="returnOption" value="refund">
+            <span class="checkmark"></span>
+            Refund Amount
+        </label>
+    </div>
+</div>
+
+            <div class="form-group">
+                <label>Reason for Return</label>
+                <select id="returnReason" name="returnReason" required>
+                    <option value="">Select a reason</option>
+                    <option value="quality_issue">Quality Issue</option>
+                    <option value="damaged">Damaged Product</option>
+                    <option value="part_missing">Part/Accessory Missing</option>
+                    <option value="wrong_item">Wrong Item Received</option>
+                    <option value="size_issue">Size Issue</option>
+                    <option value="color_issue">Color Issue</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Additional Details</label>
+                <textarea id="description" name="description" placeholder="Please provide more details about the issue..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Upload Product Photo (for verification)</label>
+                <div class="photo-upload">
+                    <input type="file" id="productPhoto" name="productPhoto" accept="image/*" required>
+                    <label for="productPhoto" class="upload-label">Choose File</label>
+                    <p id="file-name">No file chosen</p>
+                    <div id="preview-container">
+                        <img id="image-preview" src="#" alt="Preview">
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit Return Request</button>
+        </form>
+    </div>
+
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+    // Get order number and product code from URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const orderNumber = urlParams.get('orderNumber');
+    const productCode = urlParams.get('productCode');
+
+    // Set the values in the form and display
+    document.getElementById('orderNumber').value = orderNumber;
+    document.getElementById('productCode').value = productCode;
+    document.getElementById('displayOrderNumber').textContent = orderNumber;
+    document.getElementById('displayProductCode').textContent = productCode;
+
+    // Apply bounce animation to order info box
+    const orderInfoBox = document.querySelector('.order-info');
+    setTimeout(() => {
+        orderInfoBox.classList.add('bounce-element');
+    }, 300);
+
+    // File upload preview
+    document.getElementById('productPhoto').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            document.getElementById('file-name').textContent = file.name;
+            
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const preview = document.getElementById('image-preview');
+                preview.src = event.target.result;
+                const previewContainer = document.getElementById('preview-container');
+                previewContainer.style.display = 'block';
+                
+                // Apply bounce animation to preview
+                previewContainer.classList.add('bounce-element');
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // Form submission
+    document.getElementById('returnForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const submitBtn = document.querySelector('.btn-submit');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Processing...';
+        
+        const formData = new FormData(this);
+        
+        fetch('process_return.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Apply bounce animation to success state
+                submitBtn.textContent = 'Success!';
+                submitBtn.classList.add('bounce-element');
+                
+                // Redirect after delay
+                setTimeout(() => {
+                    if (data.redirect) {
+                        window.location.href = data.redirect;
+                    } else {
+                        window.location.href = 'need.html?return_success=1&orderNumber=' + encodeURIComponent(orderNumber);
+                    }
+                }, 1500);
+            } else {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Return Request';
+                alert('Error: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Submit Return Request';
+            alert('An error occurred while submitting the return request.');
+        });
+    });
+
+    // Apply bounce animation to radio options when selected
+    const radioOptions = document.querySelectorAll('.radio-option input');
+    radioOptions.forEach(option => {
+        option.addEventListener('change', function() {
+            if (this.checked) {
+                this.parentElement.classList.add('bounce-element');
+                // Remove animation class after it completes
+                setTimeout(() => {
+                    this.parentElement.classList.remove('bounce-element');
+                }, 1000);
+            }
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
