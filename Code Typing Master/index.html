@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Pro</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Typing Pro</h1>
+        <div class="button-container">
+            <button class="btn" id="practiceBtn">Practice</button>
+            <button class="btn" id="learnBtn">Learn</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('practiceBtn').addEventListener('click', () => {
+            window.location.href = 'Typing Test/index.html';
+        });
+
+        document.getElementById('learnBtn').addEventListener('click', () => {
+            window.location.href = 'Advance_Typing_Practice/index.html';
+        });
+    </script>
+</body>
+</html>
