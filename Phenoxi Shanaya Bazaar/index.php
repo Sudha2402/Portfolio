@@ -10,23 +10,23 @@
 
     <!-- Preload critical resources -->
     <link rel="preload" href="/allPageCommonStyle.css" as="style">
-    <link rel="preload" href="/style2.css" as="style">
+<!--     <link rel="preload" href="/style2.css" as="style">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+ -->
     <!-- CSS -->
-    <link rel="stylesheet" href="/allPageCommonStyle.css">
+<!--     <link rel="stylesheet" href="/allPageCommonStyle.css">
     <link rel="stylesheet" href="/style2.css">
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+ -->
     <!-- Preload scripts -->
-    <link rel="preload" href="script.js" as="script">
+<!--     <link rel="preload" href="script.js" as="script">
     <link rel="preload" href="traceShanayaBazaar.js" as="script">
     <link rel="preload" href="shanayaBazaarCookie.js" as="script">
     <link rel="preload" href="allPageCommonScript.js" as="script">
-    <link rel="preload" href="pagesnavigation.js" as="script">
+    <link rel="preload" href="pagesnavigation.js" as="script"> -->
 </head>
 
 <!-- <script src="script.js"></script> -->
@@ -1530,41 +1530,12 @@ transform: translateX(-50%);
         
 
  <!-- Scripts loaded at bottom -->
-    <script src="script.js" defer></script>
-    <script src="traceShanayaBazaar.js" defer></script>
+<!--     <script src="script.js" defer></script>
+    <script src="traceShanayaBazaar.js" defer></script> -->
     <script src="shanayaBazaarCookie.js" defer></script>
     <script src="allPageCommonScript.js" defer></script>
-    <script src="pagesnavigation.js" defer></script>
+<!--     <script src="pagesnavigation.js" defer></script> -->
     <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js" defer></script>
-
-    <!-- Structured data for SEO -->
-    <!-- <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Phenoxi Shanaya Bazaar",
-        "url": "https://phenoxi.com",
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://phenoxi.com/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
-    }
-    </script> -->
-
-
-<!-- Added proper meta tags for SEO
-
-Implemented resource preloading//The loading="preload" attribute is used to optimize website loading speed by instructing the browser to fetch a resource in advance, before it's actually needed. This is particularly helpful for critical resources that might be discovered late in the page parsing process, such as fonts or images referenced within CSS files. By preloading these resources, the browser can start fetching them earlier, leading to a faster user experience and potentially improved Core Web Vitals metrics like First Contentful Paint and Largest Contentful Paint. 
-
-Added structured data for search engines
-
-Moved all scripts to bottom with defer//Scripts with the defer attribute will execute in the order in which they appear in the document. This attribute allows the elimination of parser-blocking JavaScript where the browser would have to load and evaluate scripts before continuing to parse.
-
-Added lazy loading for iframe //Lazy-loading of <iframe> elements defers offscreen iframes from being loaded until the user scrolls near them. This saves data, speeds up the loading of other parts of the page, and reduces memory usage. As with lazy-loading for images, use the loading attribute to tell the browser you want to lazy-load an iframe.-->
-
-
-
 
 
 
