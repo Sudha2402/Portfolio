@@ -1,13 +1,12 @@
 import speech_recognition as sr
 
-import webbrowser #used for webfunctionalities like to open a new file
+import webbrowser 
 import pyttsx3
 # import musicLibrary #used to select music from file defined
 import os
 
 import Database
 import requests
-# The requests module in Python is a popular third-party library used for making HTTP requests. It simplifies the process of interacting with web services and APIs by providing a user-friendly interface for common HTTP operations. 
 
 
 from pygame import mixer
@@ -17,76 +16,35 @@ import time
 
 
 def speak(text):
-    
-    # below commented way causes error as we neet to speak repeadilt, and initialized must be close
-    
-    # tts = gTTS(text)
-    # # tts.save('response.mp3') #it is saving in external file as venv environment directory
-    # tts.save('Phenoxi_Assistant/response.mp3') #when new response will be generated then it will be updated
-    
-    # # Starting the mixer
-    # mixer.init()
-
-    # # Loading the song
-    # mixer.music.load("Phenoxi_Assistant/response.mp3")
-
-    # # Setting the volume
-    # mixer.music.set_volume(0.7)
-
-    # # Start playing the song
-    # mixer.music.play()
-    
-
-    # infinite loop #we don't need this
-    # while True:
-        
-    #     print("Press 'p' to pause, 'r' to resume")
-    #     print("Press 'e' to exit the program")
-    #     query = input("  ")
-        
-    #     if query == 'p':
-
-    #         # Pausing the music
-    #         mixer.music.pause()     
-    #     elif query == 'r':
-
-    #         # Resuming the music
-    #         mixer.music.unpause()
-    #     elif query == 'e':
-
-    #         # Stop the mixer
-    #         mixer.music.stop()
-    #         break
-        
-    # mixer.music.stop() #this way of stop will cause error, hence we will not use, we can use wait also if needed.
+  
     
     
     try:
-        # Ensure the directory exists
+       
         os.makedirs("Phenoxi_Assistant", exist_ok=True)
         
-        # Generate TTS and save the file
-        tts = gTTS(text=text, lang='en')  # Explicitly set language
+      
+        tts = gTTS(text=text, lang='en') 
         audio_file = "Phenoxi_Assistant/response.mp3"
         tts.save(audio_file)
         
-        # Initialize mixer (only once)
+     
         if not mixer.get_init():
-            mixer.init(frequency=22050)  # Standard frequency
+            mixer.init(frequency=22050) 
             
-        # Stop any currently playing audio
+      
         mixer.music.stop()
         
-        # Load and play new audio
+      
         mixer.music.load(audio_file)
         mixer.music.set_volume(0.7)
         mixer.music.play()
         
-        # Wait for playback to finish
+      
         while mixer.music.get_busy():
             time.sleep(0.1)
             
-        # Explicitly unload the file to release it
+      
         mixer.music.unload()
         
     except Exception as e:
@@ -100,7 +58,6 @@ def aiProcess(command):
     
     
     completion = client.chat.completions.create(
-    model="moonshotai/Kimi-K2-Instruct",
     messages=[
         {"role": "system", "content": "You are a virtual assistant named phenoxi skilled in general tasks like Alexa and Google Cloud. Give short responses please"},
         {"role": "user", "content": command}
@@ -113,7 +70,7 @@ def aiProcess(command):
 
 
 def processCommand(command):
-    # speak("Your search result for " , command , "is ready") #accepts single string arguement
+    
     if("open google" in command.lower()):
         speak("Opening google")
         print("Opening google")
@@ -149,22 +106,17 @@ def processCommand(command):
         print("Welcome to news")
         
         if r.status_code == 200:
-            # Parse the JSON response
+           
             data = r.json()
             
-            # Extract the articles
+           
             articles = data.get('articles', [])
             
-            # Print the headlines
+           
             for article in articles:
                 speak(article['title'])
         
-    # elif("assitant" in command.lower()):
-    #     #let open AI handle the request.
-    #     print("Assistant")
-    #     speak("Assitant will answer your questions")
-    
-    
+
         
     # elif("stop phenoxy" in command.lower()):
     elif("stop" in command.lower()):
@@ -209,25 +161,16 @@ if __name__=="__main__" :
             r = sr.Recognizer()  #it is a class of speech_recognition
             with sr.Microphone() as source:
                 print("Say something!")
-            # audio = r.listen(source) #this listen function may take much time
-            # audio = r.listen(source,timeout=2,phrase_time_limit=1) #we can set timeout upto 2sec hence listens for 2 seconds, #works good for single word command
+           
+                audio = r.listen(source) 
             
-                audio = r.listen(source) #it's working good in my case as I need long statements
-            
-            
-            
-            # for testing purposes, we're just using the default API key
-            # to use another API key, use `r.recognize_google(audio, key="GOOGLE_SPEECH_RECOGNITION_API_KEY")`
-            # instead of `r.recognize_google(audio)`
+          
             print("Google Speech Recognition thinks you said " + r.recognize_google(audio))
-            # speak(audio)no output
-            # speak(r.recognize_google(audio)) #simpliy read out whatever is spoken
+           
             
             openPhenoxi=r.recognize_google(audio)
             if(openPhenoxi.lower() == "phenoxi" or openPhenoxi.lower() == "phenoxy"):
-            # if("phenoxi" in openPhenoxi or "phenoxy"  in openPhenoxi):
-                
-                # speak(r.recognize_google(audio))
+          
                 speak("Yes")
                 
                 #command to execute after yes
@@ -276,13 +219,6 @@ if __name__=="__main__" :
         except Exception as e:
             print("Unknown error. Try later".format(e))
     
-    
-
-#!/usr/bin/env python3
-
-# NOTE: this example requires PyAudio because it uses the Microphone class
-
-
 
 
 
