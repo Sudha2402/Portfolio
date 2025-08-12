@@ -17,7 +17,7 @@ class TypingTest {
         this.startTime = null;
         this.totalWords = 0;
 
-        // Local text database
+ 
         this.textDatabase = {
             easy: [
                 "The quick brown fox jumps over the lazy dog. Simple words make for easy typing practice.",
@@ -45,7 +45,7 @@ class TypingTest {
             ]
         };
 
-        // DOM Elements
+    
         this.elements = this.initializeElements();
         this.initializeEventListeners();
         this.updateStatistics();
@@ -140,13 +140,13 @@ class TypingTest {
             const data = await response.json();
             return this.addComplexity(data.content, difficulty);
         } catch (error) {
-            // Use local database if API fails
+            // Using local database if API fails
             const texts = this.textDatabase[difficulty];
             return texts[Math.floor(Math.random() * texts.length)];
         }
     }
 
-    // after getting the api outputdate, we need to change the difficulty as per the selection: easy, medium, hard and expert.
+    // after getting the api outputdate,  changing the difficulty as per the selection: easy, medium, hard and expert.
     addComplexity(text, difficulty) {
         if (difficulty === 'easy') return text;
 
@@ -647,4 +647,5 @@ document.getElementById("practiceMode").addEventListener('click', () => {
 document.getElementById("learnMode").addEventListener('click', () => {
     window.location="../Advance_Typing_Practice/index.html";
 });
+
 
