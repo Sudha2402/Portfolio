@@ -8,38 +8,14 @@
     <meta name="keywords" content="ecommerce, shopping, fashion, accessories, home decor, beauty products, India shopping">
     <title>Phenoxi Shanaya Bazaar</title>
 
-    <!-- Preload critical resources -->
+  
     <link rel="preload" href="/allPageCommonStyle.css" as="style">
-<!--     <link rel="preload" href="/style2.css" as="style">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- -->
-    <!-- CSS -->
-<!--     <link rel="stylesheet" href="/allPageCommonStyle.css">
-    <link rel="stylesheet" href="/style2.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- -->
-    <!-- Preload scripts -->
-<!--     <link rel="preload" href="script.js" as="script">
-    <link rel="preload" href="traceShanayaBazaar.js" as="script">
-    <link rel="preload" href="shanayaBazaarCookie.js" as="script">
-    <link rel="preload" href="allPageCommonScript.js" as="script">
-    <link rel="preload" href="pagesnavigation.js" as="script"> -->
+
 </head>
-
-<!-- <script src="script.js"></script> -->
-<!-- write downward -->
-
 
 
 
 <body onload="progressbar()" alink="660099" link="0000FF" vlink="" id="home" ondblclick="removeDropDown()">
-    <!-- <body onprogress="progressbar()"> -->
-    <!-- note that on progress is for video not for progrees bar , for progressbar ,use onload, onopen, onshow, and for unload , use onunload -->
-
-    <!-- onload="checkCookie()" -->
 
     <div> <!--for header to be scrolled upto footer-->
 
@@ -53,8 +29,7 @@
 
 
                 <div style="display: flex; justify-content: center;align-items:center;width:100vw">
-                    <!-- <img class="titlelogo" src="title logo.png" alt="title logo"> -->
-                    <!-- alt will create symbol if not present and no symbol if nothing written -->
+                 
                     <img class="titlelogo" src="files acc/title logo.png" alt="">
 
                     <div style="display: block;">
@@ -133,15 +108,7 @@
                             <div class="searchbox boxstyling" >
 
 
-                                <!-- <input type="text" name="searchProductEnteredbyTyping" placeholder="Search..." class=""
-                                    class="truncate" type="search" autocomplete="off" spellcheck="false" role="combobox"
-                                    aria-controls="matches" aria-expanded="false" aria-live="polite"> -->
-
-
-                                <!-- <input type="text" name="searchProductEnteredbyTyping" placeholder="Search..."
-                                    id="myInput" onkeyup="filterFunction()" onclick="myDropdownOpen()" class="dropbtn"
-                                    type="search" autocomplete="off" spellcheck="false" role="combobox"
-                                    aria-controls="matches" aria-expanded="false" aria-live="polite" onblur="removeDropDown()" > -->
+                         
                                 <input type="text" name="searchProductEnteredbyTyping" placeholder="Search..."
                                     id="myInput" onkeyup="filterFunction()" onclick="myDropdownOpen()" class="dropbtn"
                                     type="search" autocomplete="off" spellcheck="false" role="combobox"
@@ -157,12 +124,7 @@
 
                             <!-- <div id="myDropdownSearch" class="dropdownSearch-content" onclick="removeDropDown()"> -->
                             <div id="myDropdownSearch" class="dropdownSearch-content">
-                                <!-- <p >About</p>
-                                <p >login</p>
-                                <p >Blog</p>
-                                <p >Contact</p>
-                                <p >Custom</p>
-                                <p>Support</p> -->
+                          
                                 <p>Women</p>
                                 <p>Men</p>
                                 <p>kids</p>
@@ -307,12 +269,7 @@
                 <button type="button" class="leftscrollsmall" onclick="leftscrollBut(this)">&lt;</button>
                 <button type="button" class="rightscrollsmall" onclick="righttscrollBut(this)">&gt;</button>
 
-                <!-- <div class="topcategoryProductOptionBox">
-                    <a href="#"> <img src="">
-                        <p>1</p>
-                    </a>
-                </div> -->
-
+              
                 <div class="topcategoryProductOptionBox">
                     <span> <img src="files acc/lahenganb.png" alt="">
                         <p>Women</p>
@@ -500,19 +457,8 @@
 
 
 
-                    <!-- <video src="welcome to shanaya bazaar.mp4" autoplay loop style="max-width: 95vw;max-height:50vh;position:fixed;left: 50%;top: 50%;transform: translate(-50%, -50%);z-index:5"> -->
-                    <!-- <video src="welcome to shanaya bazaar.mp4" autoplay muted controls playsinline> -->
                     <video src="files acc/welcome to shanaya bazaar.mp4" autoplay muted playsinline loop>
-                        <!-- autoplay and muted works together otherwise it will be a paused video -->
-
-
-
-
-                        <!-- it's not looping -->
-                        <!-- <source src="welcome to shanaya bazaar.mp4" type="video/mp4" /> -->
-
-
-
+                     
 
 
                 </span>
@@ -536,10 +482,7 @@
                 <span class="women"><img src="files acc/Fashion Sale Banner Post - Made with PosterMyWall.jpg"
                         alt="banner" class="bannerphoto mobilebanner"></span>
                         
-                <!-- <span class="women"><img src="files acc/1500x375_Nayi-wali-hindi._CB546793321_.jpg"
-                        alt="banner" class="bannerphoto mobilebanner"></span> -->
-                        
-                <!-- <a href="about.html"><img src="banner3.png" alt="banner" class="bannerphoto mobilebanner"></a> -->
+            
                 <span class="men"><img src="files acc/Men's Wear.jpg" alt="banner"
                         class="bannerphoto mobilebanner"></span>
                 <span class="kids"><img src="files acc/kids wear.jpg" alt="banner"
@@ -1529,12 +1472,10 @@ transform: translateX(-50%);
         </footer>
         
 
- <!-- Scripts loaded at bottom -->
-<!--     <script src="script.js" defer></script>
-    <script src="traceShanayaBazaar.js" defer></script> -->
+
     <script src="shanayaBazaarCookie.js" defer></script>
     <script src="allPageCommonScript.js" defer></script>
-<!--     <script src="pagesnavigation.js" defer></script> -->
+
     <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js" defer></script>
 
 
@@ -1543,3 +1484,4 @@ transform: translateX(-50%);
 
 </body>
 </html>
+
