@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phenoxi - AI Voice Assistant</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  
+
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-web@1.0.0/dist/dotlottie-web.js"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- 3D Chatbot Animation -->
+  
+
+<!-- Lottie Animation -->
+<div class="chatbot-animation" id="chatbotAnimation">
+    <iframe src="https://lottie.host/embed/f61116b4-b077-402b-beb7-986b5b93345e/FvzY3yz7mQ.lottie" 
+            class="lottie-iframe"
+            id="lottieIframe">
+    </iframe>
+</div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">
+            <i class="fas fa-robot"></i>
+            <h2>Phenoxi</h2>
+          </div>
+          <button class="new-chat-btn" id="newChatBtn">
+            <i class="fas fa-plus"></i>
+            New Chat
+          </button>
+        </div>
+
+        <div class="conversation-history">
+          <h3>Conversation History</h3>
+          <div class="history-list" id="historyList">
+            <!-- Conversation items will be added here dynamically -->
+            <div class="history-item active">
+              <i class="fas fa-comment"></i>
+              <span>Current Session</span>
+              <i class="fas fa-trash delete-btn"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-footer">
+          <div class="user-profile">
+            <div class="avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <span>User</span>
+          </div>
+        </div>
+
+        
+      </aside>
+
+      <!-- Main Chat Area -->
+      <main class="chat-area">
+        <!-- Header -->
+        <header class="chat-header">
+          <button class="sidebar-toggle" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="chat-title">
+            <h1>Phenoxi Assistant</h1>
+            <div class="status-indicator">
+              <span id="statusText">Ready to help</span>
+              <div class="pulse-dot" id="statusDot"></div>
+            </div>
+          </div>
+          <div class="header-actions">
+            <button class="action-btn" id="clearChatBtn" title="Clear Chat">
+              <i class="fas fa-trash"></i>
+            </button>
+            <button class="action-btn" id="settingsBtn" title="Settings">
+              <i class="fas fa-cog"></i>
+            </button>
+          </div>
+        </header>
+
+        <!-- Chat Messages Container -->
+        <div class="chat-container">
+          <div class="welcome-message" id="welcomeMessage">
+            <div class="welcome-content">
+              <div class="bot-avatar">
+                <i class="fas fa-robot"></i>
+              </div>
+              <h2>Hello! I'm Phenoxi</h2>
+              <p>
+                Your AI assistant ready to help with tasks, information, and
+                conversations.
+              </p>
+              <div class="quick-suggestions">
+                <button class="suggestion-btn" data-command="open google">
+                  <i class="fab fa-google"></i>
+                  Open Google
+                </button>
+                <button class="suggestion-btn" data-command="play music">
+                  <i class="fas fa-music"></i>
+                  Play Music
+                </button>
+                <button class="suggestion-btn" data-command="tell me a joke">
+                  <i class="fas fa-laugh"></i>
+                  Tell a Joke
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-messages" id="chatMessages">
+            <!-- Messages will be appended here -->
+          </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-area">
+          <div class="input-container">
+            <div class="input-wrapper">
+              <button class="attach-btn" title="Attach File">
+                <i class="fas fa-paperclip"></i>
+              </button>
+              <input
+                type="text"
+                id="textInput"
+                placeholder="Type your message or say 'Phenoxi' to start..."
+              />
+              <button class="emoji-btn" title="Emoji">
+                <i class="fas fa-smile"></i>
+              </button>
+            </div>
+            <button id="sendButton" class="btn-send" title="Send Message">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+
+          <!-- Voice Control -->
+          <div class="voice-controls">
+            <button id="voiceButton" class="btn-voice">
+              <i class="fas fa-microphone"></i>
+              <span>Click to Talk</span>
+            </button>
+            <div class="voice-visualizer" id="visualizer">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="quick-actions">
+            <button class="quick-btn" data-command="open google">
+              <i class="fab fa-google"></i>
+              <span>Google</span>
+            </button>
+            <button class="quick-btn" data-command="open youtube">
+              <i class="fab fa-youtube"></i>
+              <span>YouTube</span>
+            </button>
+            <button class="quick-btn" data-command="play shape">
+              <i class="fas fa-music"></i>
+              <span>Music</span>
+            </button>
+            <button class="quick-btn" data-command="portfolio">
+              <i class="fas fa-briefcase"></i>
+              <span>Portfolio</span>
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Loading Animation -->
+    <div class="loading" id="loading">
+      <div class="loading-content">
+        <div class="typing-indicator">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <p>Phenoxi is thinking...</p>
+      </div>
+    </div>
+
+
+    <!-- Idle Indicator -->
+<div class="idle-indicator" id="idleIndicator" title="Click to interact">
+    <i class="fas fa-robot"></i>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
